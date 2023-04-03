@@ -4,19 +4,16 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true,
-    },
+      jsx: true
+    }
   },
-  extends: [
-    '@trbl',
-    'plugin:@typescript-eslint/recommended',
-  ],
+  extends: ['next/core-web-vitals', 'plugin:@typescript-eslint/recommended', 'prettier'],
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      }
+    }
   },
   rules: {
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
@@ -32,16 +29,16 @@ module.exports = {
         js: 'never',
         jsx: 'never',
         ts: 'never',
-        tsx: 'never',
-      },
-    ],
+        tsx: 'never'
+      }
+    ]
   },
   overrides: [
     {
       files: ['*.js'],
       rules: {
-        '@typescript-eslint/no-var-requires': 'off',
-      },
-    },
-  ],
-};
+        '@typescript-eslint/no-var-requires': 'off'
+      }
+    }
+  ]
+}

@@ -18,7 +18,12 @@
     "build": "cross-env NODE_ENV=production npm run build:payload && npm run build:server && npm run copyfiles:media && npm run build:next && npm run serve",
     "dev": "ts-node server.ts",
     "seed": "ts-node seed/index.js",
-    "serve": "cross-env NODE_ENV=production PAYLOAD_CONFIG_PATH=dist/payload.config.js node dist/server.js"
+    "serve": "cross-env NODE_ENV=production PAYLOAD_CONFIG_PATH=dist/payload.config.js node dist/server.js",
+    "format": "npx prettier --write . --ignore-path .gitignore --cache",
+    "lint": "next lint -- --ignore-path .gitignore",
+    "lint:fix": "npm run format && npm run lint -- --fix",
+    "start": "next start",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "copyfiles": "^2.4.1",
@@ -27,6 +32,7 @@
     "express": "^4.18.0",
     "next": "^13.2.3",
     "payload": "^1.6.19",
+    "prettier-plugin-tailwindcss": "^0.2.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.52.0",
