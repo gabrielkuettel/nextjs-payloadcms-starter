@@ -6,7 +6,11 @@ type Props = {
 }
 
 const Error: React.FC<Props> = ({ statusCode }) => (
-  <p>{statusCode ? `An error ${statusCode} occurred on server` : 'An error occurred on client'}</p>
+  <p>
+    {statusCode
+      ? `An error ${statusCode} occurred on server`
+      : 'An error occurred on client'}
+  </p>
 )
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {

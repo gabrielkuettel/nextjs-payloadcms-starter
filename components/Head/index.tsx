@@ -38,7 +38,10 @@ const Head: React.FC<Props> = ({ title, description, ogImage, keywords }) => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta property="og:url" content={`${SERVER_URL}${asPath}`} />
       <meta property="og:title" content={title || defaultTitle} />
-      <meta property="og:description" content={description || defaultDescription} />
+      <meta
+        property="og:description"
+        content={description || defaultDescription}
+      />
       <meta property="twitter:title" content={title || defaultTitle} />
       <meta name="twitter:site" content="@payloadcms" />
       <meta name="twitter:card" content="summary_large_image" />

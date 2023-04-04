@@ -2,7 +2,7 @@ import React from 'react'
 import payload from 'payload'
 import { GetServerSideProps } from 'next'
 import getConfig from 'next/config'
-import { Type as PageType } from '../collections/Page'
+import { Type as PageType } from '../collections/Pages'
 import NotFound from '../components/NotFound'
 import Head from '../components/Head'
 import classes from '../css/page.module.css'
@@ -48,7 +48,11 @@ const Page: React.FC<Props> = (props) => {
       <footer className={classes.footer}>
         <hr />
         NextJS + Payload Server Boilerplate made by{' '}
-        <a href="https://payloadcms.com" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://payloadcms.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Payload
         </a>
       </footer>
@@ -59,7 +63,9 @@ const Page: React.FC<Props> = (props) => {
 export default Page
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const slug = ctx.params?.slug ? (ctx.params.slug as string[]).join('/') : 'home'
+  const slug = ctx.params?.slug
+    ? (ctx.params.slug as string[]).join('/')
+    : 'home'
 
   const pageQuery = await payload.find({
     collection: 'pages',

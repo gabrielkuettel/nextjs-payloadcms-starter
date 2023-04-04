@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import Link from 'next/link'
-import { Type as Page } from '../../collections/Page'
+import { Type as Page } from '../../collections/Pages'
 import RichText from '../../components/RichText'
 import classes from './index.module.css'
 
@@ -37,7 +37,11 @@ export const Component: React.FC<Type> = (props) => {
             {buttons.map((button, i) => (
               <li key={i}>
                 {button.type === 'page' && (
-                  <Link href="[...slug]" as={`/${button.page.slug}`} className={classes.button}>
+                  <Link
+                    href="[...slug]"
+                    as={`/${button.page.slug}`}
+                    className={classes.button}
+                  >
                     {button.label}
                   </Link>
                 )}

@@ -6,13 +6,14 @@ const format = (val: string): string =>
     .replace(/[^\w-/]+/g, '')
     .toLowerCase()
 
-const formatSlug =
+export const formatSlug =
   (fallback: string): FieldHook =>
   ({ value, originalDoc, data }) => {
     if (typeof value === 'string') {
       return format(value)
     }
-    const fallbackData = (data && data[fallback]) || (originalDoc && originalDoc[fallback])
+    const fallbackData =
+      (data && data[fallback]) || (originalDoc && originalDoc[fallback])
 
     if (fallbackData && typeof fallbackData === 'string') {
       return format(fallbackData)
@@ -20,5 +21,3 @@ const formatSlug =
 
     return value
   }
-
-export default formatSlug

@@ -2,7 +2,8 @@ import { Block } from 'payload/types'
 
 type Data = Record<string, unknown>
 
-const customURLCondition = (_: Data, siblings: Data): boolean => siblings.type === 'custom'
+const customURLCondition = (_: Data, siblings: Data): boolean =>
+  siblings.type === 'custom'
 
 export const CallToAction: Block = {
   slug: 'cta',
@@ -68,7 +69,8 @@ export const CallToAction: Block = {
           relationTo: 'pages',
           required: true,
           admin: {
-            condition: (_: Data, siblings: Data): boolean => siblings.type === 'page'
+            condition: (_: Data, siblings: Data): boolean =>
+              siblings.type === 'page'
           }
         },
         {

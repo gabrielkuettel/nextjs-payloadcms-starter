@@ -27,7 +27,9 @@ export const Component: React.FC<Type> = (props) => {
       height = image.sizes[type].height
     }
 
-    const sizesToUse = sizes.map((size) => `(max-width: ${size}px) ${size}px`).join(', ')
+    const sizesToUse = sizes
+      .map((size) => `(max-width: ${size}px) ${size}px`)
+      .join(', ')
 
     return (
       <div className={`${classes.wrap} ${classes[type]}`}>

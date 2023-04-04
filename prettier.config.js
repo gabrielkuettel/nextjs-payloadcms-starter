@@ -1,9 +1,9 @@
-const prettierTailwindPlugin = require('prettier-plugin-tailwindcss')
+const prettierPluginTailwindcss = require('prettier-plugin-tailwindcss')
 
 module.exports = {
   semi: false,
   singleQuote: true,
-  printWidth: 100,
+  printWidth: 80,
   trailingComma: 'none',
-  plugins: [prettierTailwindPlugin]
+  plugins: [prettierPluginTailwindcss]
 }
